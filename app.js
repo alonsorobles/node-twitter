@@ -6,7 +6,17 @@ app.listen(8000);
 var tweets = [];
 
 app.get('/', function(req, res) {
-    res.send('Welcome to Node Twitter');
+    var title = 'Chirpie',
+        header = 'Welcome to Chirpie';
+
+    res.render('index', {
+        locals: {
+            'title': title,
+            'header': header,
+            'tweets': tweets,
+            stylesheets: ['/public/style.css']
+        }
+    })
 });
 
 app.post('/send', express.bodyParser(), function(req, res) {
