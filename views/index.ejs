@@ -2,4 +2,6 @@
     <input type="text" length="140" name="tweet" />
     <input type="submit" value="Tweet" />
 </form>
-<%- partial('partials/chirp', tweets) %>
+<% tweets.forEach(function(chirp) { %>
+    <%- include partials/chirp %>
+<% }) %>

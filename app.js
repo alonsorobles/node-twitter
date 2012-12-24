@@ -1,7 +1,10 @@
-var express = require('express');
+var express = require('express'),
+    app = express(),
+    expressLayouts = require('express-ejs-layouts');
 
-var app = express();
 app.listen(8000);
+app.set('view engine', 'ejs');
+app.use(expressLayouts);
 
 var tweets = [];
 

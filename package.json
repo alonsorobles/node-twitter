@@ -1,0 +1,11 @@
+{
+    "name": "node-twitter",
+    "description": "a simplified twitter clone",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "express": "3.x",
+        "ejs": "0.8.x",
+        "express-ejs-layouts": "0.3.x"
+    }
+}
