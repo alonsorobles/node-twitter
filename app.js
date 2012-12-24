@@ -25,7 +25,11 @@ app.get('/', function(req, res) {
 app.post('/send', express.bodyParser(), function(req, res) {
    if (req.body && req.body.tweet) {
        tweets.push(req.body.tweet);
-       res.send({status:"ok", message:"Tweet received"});
+       if (acceptsHtml(req.headers['accept'])) {
+           res.redirect('/', 302);
+       } else {
+           res.send({status:"ok", message:"Tweet received"});
+       }
    } else {
        res.send({status:"nok", message:"No tweet received"});
    }
