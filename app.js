@@ -35,3 +35,10 @@ app.get('/tweets', function(req, res) {
    res.send(tweets);
 });
 
+function acceptsHtml(header) {
+    var accepts = header.split(',');
+    for(var i = 0; i < accepts.length; i += 1) {
+        if (accepts[i] === 'text/html') { return true; }
+    }
+    return false;
+}
